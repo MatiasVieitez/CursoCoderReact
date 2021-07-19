@@ -1,0 +1,50 @@
+.bg-back {
+    background-color: rgb(147, 186, 58);
+}
+
+.brand {
+    position: relative;
+    left: 30px;
+}
+
+.logo {
+    position: relative;
+    left: -5px;
+    padding: 1%;
+    width: 65px;
+    height: 65px;
+    border-radius: 35px;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    width: 70px;
+    height: 70px;
+    transform: rotate(360deg);
+}
+
+.elements {
+    padding: 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.links {
+    color: seashell;
+    display: flex;
+    position: relative;
+    left: 50%;
+}
+
+.links:hover {
+    color: grey;
+}
+
+#ddl {
+    color: seashell;
+}
+
+#ddl:hover {
+    color: grey;
+}
