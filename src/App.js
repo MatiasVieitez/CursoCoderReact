@@ -1,10 +1,13 @@
 
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer.js"
 import NavBar from "./components/Navbar/Navbar.js"
+
 
 const App = () =>
     <>
 
         <NavBar />
+        <ItemListContainer brand="CreativaKids" />
 
     </>
 

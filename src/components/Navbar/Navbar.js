@@ -4,12 +4,14 @@ import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import logo from "./logo.jpg"
 
 import "./Navbar.css"
+//import "../Cartwidget.js"
+import Cartwidget from '../CartWidget/Cartwidget'
 
 const NavBar = () =>
     <>
 
 
-        <Navbar bg="back" variant="dark" sticky="top" expand="lg" collapseOnSelect>
+        <Navbar bg="back" variant="dark" sticky="top" expand="md" collapseOnSelect>
 
 
 
@@ -19,8 +21,8 @@ const NavBar = () =>
             </Navbar.Brand>
 
 
-            <Navbar.Toggle />
-            <Navbar.Collapse>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
 
 
                 <nav className="elements">
@@ -32,6 +34,8 @@ const NavBar = () =>
                         <NavDropdown.Item href="PRODUCTOS/AMIGURUMIS">ACCESORIOS</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link className="links" href="#">CONTACTAME</Nav.Link>
+                    <Nav.Link className="links" href="#cart"><Cartwidget /></Nav.Link>
+
                 </nav>
             </Navbar.Collapse>
 
