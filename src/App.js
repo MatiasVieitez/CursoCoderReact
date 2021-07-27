@@ -1,15 +1,20 @@
 
+import ItemCounter from "./components/Counter/ItemCounter.js"
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer.js"
 import NavBar from "./components/Navbar/Navbar.js"
 
 
-const App = () =>
-    <>
+const App = () => {
 
-        <NavBar />
-        <ItemListContainer brand="CreativaKids" />
 
-    </>
 
+    return (
+        <>
+
+            <NavBar />
+            <ItemListContainer brand="CreativaKids" />
+        </>
+    )
+}
 
 export default App
