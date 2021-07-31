@@ -19,16 +19,6 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
 
     }
 
-    onAdd(counter, "osito", stock)
-
-    const confirm = () => {
-
-        if (stock > 0) { onAdd(counter) }
-
-    }
-
-
-
 
     return (
 
@@ -45,7 +35,7 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
 
                 </button>
 
-                <button onClick={confirm} className="botonAdd">
+                <button onClick={onAdd(counter)} className="botonAdd">
 
                     Agregar al carrito
 
@@ -57,6 +47,8 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
                     +
 
                 </button>
+
+
 
             </div>
 
