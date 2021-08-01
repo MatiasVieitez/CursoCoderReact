@@ -1,5 +1,6 @@
 import "./ItemCounter.css"
 import { useState } from "react";
+import { P } from '../productos';
 
 const ItemCounter = ({ stock, initial, onAdd }) => {
 
@@ -8,7 +9,6 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
     const increaseCounter = () => {
 
         if (counter < stock) { setCounter(counter + 1) }
-        else { }
     }
 
     const DecreaseCounter = () => {
@@ -20,11 +20,12 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
     }
 
 
+
     return (
 
 
         <div className="contador">
-            <h3>Amigurumi Osito</h3>
+            <h3>osito</h3>
 
             <p className="numero">  Cantidad : {counter}</p>
 

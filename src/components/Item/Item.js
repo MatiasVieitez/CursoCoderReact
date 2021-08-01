@@ -2,23 +2,14 @@ import ItemCounter from "../Counter/ItemCounter.js";
 
 
 
-const Item = ({ id, title, price, pictureUrl, stock }) => {
+const Item = ({ Producto }) => {
+
+
+
 
     function onAdd(counter) {
 
-        let item = {
 
-            item: {
-
-                id: id,
-                title: title,
-                price: price,
-                pictureUrl: pictureUrl,
-            },
-
-            cantidad: counter,
-
-        };
 
     }
 
@@ -27,7 +18,7 @@ const Item = ({ id, title, price, pictureUrl, stock }) => {
 
         <>
 
-            <ItemCounter stock={stock} initial={1} onAdd={onAdd} />
+            <ItemCounter stock={10} initial={1} onAdd={onAdd} />
 
         </>
 
