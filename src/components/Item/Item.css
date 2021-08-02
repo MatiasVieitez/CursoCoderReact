@@ -1,0 +1,15 @@
+.logos {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 40%;
+    padding: 1%;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    padding: 10%;
+}

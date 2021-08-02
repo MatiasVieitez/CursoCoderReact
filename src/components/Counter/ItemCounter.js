@@ -23,38 +23,45 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
 
     return (
 
+        <>
 
-        <div className="contador">
-            <h3>osito</h3>
+            <section className="contadores">
 
-            <p className="numero">  Cantidad : {counter}</p>
-
-            <div className="btns">
-                <button onClick={DecreaseCounter} className="boton">
-
-                    -
-
-                </button>
-
-                <button onClick={onAdd(counter)} className="botonAdd">
-
-                    Agregar al carrito
-
-                </button>
+                <div className="contador">
 
 
-                <button onClick={increaseCounter} className="boton">
+                    <p className="numero">  Cantidad : {counter}</p>
 
-                    +
+                    <div className="btns">
+                        <button onClick={DecreaseCounter} className="boton">
 
-                </button>
+                            -
+
+                        </button>
+
+                        <button onClick={onAdd(counter)} className="botonAdd">
+
+                            Agregar al carrito
+
+                        </button>
+
+
+                        <button onClick={increaseCounter} className="boton">
+
+                            +
+
+                        </button>
 
 
 
-            </div>
+                    </div>
 
-        </div>
+                </div>
 
+            </section>
+
+
+        </>
 
 
     )

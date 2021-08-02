@@ -23,13 +23,13 @@ const ItemListContainer = (props) => {
 
             setTimeout(() => {
 
-                resolve(Productos)
+                resolve(P)
 
             }, 2000)
 
         })
 
-        promesa.then((Productos) => {
+        promesa.then((P) => {
 
             setProductos(P)
 
