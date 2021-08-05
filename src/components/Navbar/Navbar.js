@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
-
+import { LinkContainer } from 'react-router-bootstrap'
 import logo from "./logo.jpg"
 
 import "./Navbar.css"
@@ -26,6 +26,7 @@ const NavBar = () =>
 
 
                 <nav className="elements">
+
                     <Nav.Link className="links" href="#">INICIO</Nav.Link>
                     <Nav.Link className="links" href="#">ACERCA DE MI</Nav.Link>
                     <NavDropdown className="links" title="PRODUCTOS" id="ddl" >
@@ -42,6 +43,11 @@ const NavBar = () =>
 
         </Navbar>
 
+
+
+        {/* <LinkContainer to="/service">
+            <Nav.Link>Service</Nav.Link>
+        </LinkContainer> */}
 
 
     </>

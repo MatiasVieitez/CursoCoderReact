@@ -5,9 +5,6 @@ import './Item.css'
 
 const Item = ({ id, title, price, pictureUrl, stock }) => {
 
-
-
-
     function onAdd(counter) {
 
 
