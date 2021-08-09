@@ -2,42 +2,34 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer.
 import NavBar from "./components/Navbar/Navbar.js"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.js"
-import { Fragment } from "react"
-
 
 const App = () => {
 
-
-
     return (
         <>
-            <Fragment>
+            <BrowserRouter>
+                <NavBar />
+                <Switch >
 
-                <BrowserRouter>
-                    <NavBar />
-                    <Switch >
+                    <Route path="/" exact>
+                        <ItemListContainer brand="CreativaKids" />
+                    </Route>
 
-                        <Route path="/">
-                            <ItemListContainer brand="CreativaKids" />
-                        </Route>
+                    <Route path="/category/:id">
 
-                        <Route path="/category/:id">
+                        <ItemListContainer />
 
-                            <ItemListContainer />
+                    </Route>
 
-                        </Route>
+                    <Route path="/item/:id">
 
-                        <Route path="/item/:id">
+                        <ItemDetailContainer />
 
-                            <ItemDetailContainer />
-
-                        </Route>
+                    </Route>
 
 
-                    </Switch>
-                </BrowserRouter>
-            </Fragment>
-
+                </Switch>
+            </BrowserRouter>
         </>
     )
 }

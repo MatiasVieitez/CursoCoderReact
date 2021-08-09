@@ -1,6 +1,6 @@
 import ItemCounter from "../Counter/ItemCounter.js";
 
-const ItemDetail = ({ item: { title, price, PictureUrl, descripcion } }) => {
+const ItemDetail = ({ title, price, PictureUrl, descripcion }) => {
 
     const onAdd = () => {
 
