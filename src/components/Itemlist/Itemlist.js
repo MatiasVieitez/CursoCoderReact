@@ -2,8 +2,6 @@ import Item from "../Item/Item"
 
 const Itemlist = ({ Productos }) => {
 
-
-
     return (
 
         <ul>
@@ -15,11 +13,9 @@ const Itemlist = ({ Productos }) => {
 
 
 
+
         </ul>
-
-
     )
-
 }
 
 export default Itemlist

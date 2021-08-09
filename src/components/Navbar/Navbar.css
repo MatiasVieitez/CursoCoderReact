@@ -16,6 +16,14 @@
     font-size: 30px;
 }
 
+.titulo {
+    text-decoration: none;
+}
+
+.titulo:hover {
+    color: bisque;
+}
+
 .logo {
     position: relative;
     left: -5px;

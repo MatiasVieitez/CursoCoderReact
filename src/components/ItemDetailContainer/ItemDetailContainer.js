@@ -14,19 +14,6 @@ const ItemDetailContainer = () => {
 
   const { id } = useParams();
 
-  useEffect(() => {
-
-
-    const promesa = getItems()
-    promesa.then(json => {
-
-      setItem(json)
-    })
-
-
-
-  }, [id])
-
   const getItems = () => {
 
     const promesa = new Promise((resolve, reject) => {
@@ -40,12 +27,27 @@ const ItemDetailContainer = () => {
     return promesa
   }
 
+  useEffect(() => {
+
+
+    const promesa = getItems()
+    promesa.then(json => {
+
+      setItem(json)
+    })
+
+
+
+  }, [id])
+
+
+
   return (
 
     <div>
 
 
-      <ItemDetail item={item} />
+      <ItemDetail item={getItems} />
 
     </div>
 

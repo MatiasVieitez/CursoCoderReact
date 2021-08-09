@@ -17,7 +17,7 @@ const ItemDetail = ({ title, price, PictureUrl, descripcion }) => {
                 <div className="contenedor">
                     <h3>{title}</h3>
                     <h4>${price}</h4>
-                    <p>{descripcion}</p>
+                    <p>{descripcion} </p>
 
 
                     <img src={PictureUrl} alt="" className="logos" />
