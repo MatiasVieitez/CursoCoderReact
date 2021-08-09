@@ -1,6 +1,6 @@
 import ItemCounter from "../Counter/ItemCounter.js";
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item: { title, price, PictureUrl, descripcion } }) => {
 
     const onAdd = () => {
 
@@ -15,10 +15,12 @@ const ItemDetail = ({ item }) => {
             <section className="productos">
 
                 <div className="contenedor">
-                    <h3>{item.title}</h3>
-                    <h4>${item.price}</h4>
+                    <h3>{title}</h3>
+                    <h4>${price}</h4>
+                    <p>{descripcion}</p>
 
-                    <img src={item.PictureUrl} alt="" className="logos" />
+
+                    <img src={PictureUrl} alt="" className="logos" />
                 </div>
 
                 <ItemCounter stock={10} initial={1} onAdd={onAdd} className="contadores" />
