@@ -1,3 +1,17 @@
+Buenas mi nombre es Matias Vieitez, este proyecto es realizado para el curso de "React Js" de Coder House.
+Consta de un Eccommerce llamado "CreativaKids" que es un enprendimiento que hay en la familia.
+
+Dejo en el repositorio un "Gif" mostrando la navegacion por la app.
+
+Para probar la pagina Descarga el pryecto atraves de un navegador o clonalo atraves de github, Luego en una consola de comando escribi "npn install" o "npm i" para instalar los modulos utilizados en el desarrollo de la misma.
+
+Para finalizar en la misma consola, luego de la instalacion de los modulos escribi "npm start" y podras utilizarla
+
+Saludos Matias.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

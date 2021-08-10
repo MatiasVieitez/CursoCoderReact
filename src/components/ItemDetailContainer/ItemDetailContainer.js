@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
 
   //const prod = { id: 4, title: "Elefante", price: 500, PictureUrl: elefante }
 
-  const [item, setItem] = useState(false)
+  const [item, setItem] = useState({})
 
   const { id } = useParams();
 
@@ -19,9 +19,9 @@ const ItemDetailContainer = () => {
     const promesa = new Promise((resolve, reject) => {
 
       setTimeout(() => {
+        const productoBuscado = P.find(item => item.id === parseInt(id))
 
-        resolve(P)
-
+        resolve(productoBuscado)
       }, 2000)
     })
     return promesa
@@ -36,18 +36,13 @@ const ItemDetailContainer = () => {
       setItem(json)
     })
 
-
-
   }, [id])
-
-
 
   return (
 
     <div>
 
-
-      <ItemDetail item={getItems} />
+      <ItemDetail item={item} />
 
     </div>
 
