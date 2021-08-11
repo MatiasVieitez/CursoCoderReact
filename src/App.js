@@ -15,7 +15,7 @@ const App = () => {
                         <ItemListContainer brand="CreativaKids" />
                     </Route>
 
-                    <Route path="/category/:id">
+                    <Route path="/categoria/:id">
 
                         <ItemListContainer />
 

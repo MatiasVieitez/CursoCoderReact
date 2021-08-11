@@ -30,10 +30,12 @@ const NavBar = () =>
                 <nav className="elements">
 
                     <Nav.Link className="links" as={Link} to={"/"}>INICIO</Nav.Link>
+                    {/* <Nav.Link className="links" as={Link} to={"/categoria/1"}>categoria 1</Nav.Link> */}
+                    {/* <Nav.Link className="links" as={Link} to={"/categoria/2"}>categoria 2</Nav.Link> */}
                     <Nav.Link className="links" href="#">ACERCA DE MI</Nav.Link>
                     <NavDropdown className="links" title="PRODUCTOS" id="ddl" >
-                        <NavDropdown.Item href="PRODUCTOS/AMIGURUMIS">AMIGURUMIS</NavDropdown.Item>
-                        <NavDropdown.Item href="PRODUCTOS/AMIGURUMIS">ROPA</NavDropdown.Item>
+                        <Nav.Link className="links1" as={Link} to={"/categoria/1"}><NavDropdown.Item href="PRODUCTOS/categoria 1">categoria 1</NavDropdown.Item></Nav.Link>
+                        <Nav.Link className="links1" as={Link} to={"/categoria/2"}><NavDropdown.Item href="PRODUCTOS/categoria 2">categoria 2</NavDropdown.Item></Nav.Link>
                         <NavDropdown.Item href="PRODUCTOS/AMIGURUMIS">ACCESORIOS</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link className="links" href="#">CONTACTAME</Nav.Link>
