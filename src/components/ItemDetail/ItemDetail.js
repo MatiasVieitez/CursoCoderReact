@@ -1,10 +1,17 @@
+import { useState } from "react";
 import ItemCounter from "../Counter/ItemCounter.js";
+import { NavLink } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import "./itemdetail.css"
+
 
 const ItemDetail = ({ item: { title, price, pictureUrl, descripcion } }) => {
 
-    const onAdd = () => {
+    const [count, setCounter] = useState();
 
-        console.log('agregando a carrito')
+    const additem = eventCount => {
+
+        setCounter(eventCount)
 
     }
 
@@ -22,9 +29,21 @@ const ItemDetail = ({ item: { title, price, pictureUrl, descripcion } }) => {
 
 
                     <img src={pictureUrl} alt="" className="logos" />
+
+                    {count >= 1 ? (
+                        <>
+                            <p>Cantidad: {count}</p>
+                            <NavLink to="/cart" ><Button variant="outline-success">terminar compra</Button></NavLink>
+                        </>
+                    ) : (
+
+                        <ItemCounter stock={10} initial={1} onAdd={additem} className="contador" />
+                    )}
                 </div>
 
-                <ItemCounter stock={10} initial={1} onAdd={onAdd} className="contadores" />
+
+
+
             </section>
 
         </>

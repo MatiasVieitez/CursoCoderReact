@@ -39,7 +39,7 @@ const ItemCounter = ({ stock, initial, onAdd }) => {
 
                         </button>
 
-                        <button onClick={onAdd(counter)} className="botonAdd">
+                        <button onClick={() => onAdd(counter)} className="botonAdd">
 
                             Agregar al carrito
 

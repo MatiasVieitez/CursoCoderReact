@@ -25,7 +25,7 @@ const Item = ({ id, title, price, pictureUrl, stock }) => {
                     <img src={pictureUrl} alt="" className="logos" />
                 </div>
 
-                <ItemCounter stock={10} initial={1} onAdd={onAdd} className="contadores" />
+
             </section>
 
         </>
