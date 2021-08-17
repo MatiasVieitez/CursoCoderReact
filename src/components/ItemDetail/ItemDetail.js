@@ -3,13 +3,19 @@ import ItemCounter from "../Counter/ItemCounter.js";
 import { NavLink } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "./itemdetail.css"
+import { useCartContext } from "../../context/CartContext.js";
+import { useEffect } from "react";
 
 
-const ItemDetail = ({ item: { title, price, pictureUrl, descripcion } }) => {
+const ItemDetail = ({ item }) => {
 
     const [count, setCounter] = useState();
 
-    const additem = eventCount => {
+    const { title, price, pictureUrl, descripcion } = item;
+
+    const context = useCartContext();
+
+    const addItem = eventCount => {
 
         setCounter(eventCount)
 
@@ -17,7 +23,6 @@ const ItemDetail = ({ item: { title, price, pictureUrl, descripcion } }) => {
 
     return (
         <>
-
 
             <section className="productos">
 
@@ -33,16 +38,13 @@ const ItemDetail = ({ item: { title, price, pictureUrl, descripcion } }) => {
                     {count >= 1 ? (
                         <>
                             <p>Cantidad: {count}</p>
-                            <NavLink to="/cart" ><Button variant="outline-success">terminar compra</Button></NavLink>
+                            <NavLink to="/cart" ><Button variant="outline-success" onClick={() => context.addItem(item, count)}>Finalizar la compra</Button></NavLink>
                         </>
                     ) : (
 
-                        <ItemCounter stock={10} initial={1} onAdd={additem} className="contador" />
+                        < ItemCounter stock={10} initial={1} onAdd={addItem} className="contador" />
                     )}
                 </div>
-
-
-
 
             </section>
 

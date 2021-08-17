@@ -1,6 +1,10 @@
-.titulo {
-    color: seashell;
+.titulo-props {
+    color: floralwhite;
     text-align: center;
     margin-top: 10%;
-    background-color: rgb(147, 186, 58);
+    transition: 2s;
+}
+
+.titulo-props:hover {
+    color: rgb(147, 186, 58);
 }

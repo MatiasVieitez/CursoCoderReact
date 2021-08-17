@@ -2,6 +2,8 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer.
 import NavBar from "./components/Navbar/Navbar.js"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.js"
+import Cart from "./components/cart/Cart.js"
+import "./styles.css"
 
 const App = () => {
 
@@ -25,6 +27,10 @@ const App = () => {
 
                         <ItemDetailContainer />
 
+                    </Route>
+
+                    <Route exact path="/cart">
+                        <Cart />
                     </Route>
 
 

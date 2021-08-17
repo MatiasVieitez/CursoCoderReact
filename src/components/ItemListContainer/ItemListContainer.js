@@ -53,7 +53,7 @@ const ItemListContainer = (props) => {
     return (
         <div className="container">
 
-            <h1 className="titulo"> Bienvenido a {props.brand}</h1>
+            <h1 className="titulo-props"> Bienvenido a {props.brand}</h1>
 
             <Itemlist Productos={Productos} />
 

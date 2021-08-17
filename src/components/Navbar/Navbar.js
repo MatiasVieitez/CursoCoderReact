@@ -39,7 +39,7 @@ const NavBar = () =>
                         <NavDropdown.Item href="PRODUCTOS/AMIGURUMIS">ACCESORIOS</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link className="links" href="#">CONTACTAME</Nav.Link>
-                    <Nav.Link className="links" href="#cart"><Cartwidget /></Nav.Link>
+                    <Nav.Link className="links" as={Link} to={"/cart"}><Cartwidget /></Nav.Link>
 
                 </nav>
             </Navbar.Collapse>
