@@ -14,7 +14,7 @@ const Cart = () => {
             ) : (
                 <table>
 
-                    <tbody>
+                    <tbody className="t-body">
                         {context.items.map(({ item, quantity }) => {
                             return (
                                 <div key={item.id}>
