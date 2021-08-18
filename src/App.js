@@ -3,39 +3,42 @@ import NavBar from "./components/Navbar/Navbar.js"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer.js"
 import Cart from "./components/cart/Cart.js"
+import CartContextProvider from "./context/CartContext.js"
 import "./styles.css"
 
 const App = () => {
 
     return (
         <>
-            <BrowserRouter>
-                <NavBar />
-                <Switch >
+            <CartContextProvider>
+                <BrowserRouter>
+                    <NavBar />
+                    <Switch >
 
-                    <Route path="/" exact>
-                        <ItemListContainer brand="CreativaKids" />
-                    </Route>
+                        <Route path="/" exact>
+                            <ItemListContainer brand="CreativaKids" />
+                        </Route>
 
-                    <Route path="/categoria/:id">
+                        <Route path="/categoria/:id">
 
-                        <ItemListContainer />
+                            <ItemListContainer />
 
-                    </Route>
+                        </Route>
 
-                    <Route path="/item/:id">
+                        <Route path="/item/:id">
 
-                        <ItemDetailContainer />
+                            <ItemDetailContainer />
 
-                    </Route>
+                        </Route>
 
-                    <Route exact path="/cart">
-                        <Cart />
-                    </Route>
+                        <Route exact path="/cart">
+                            <Cart />
+                        </Route>
 
 
-                </Switch>
-            </BrowserRouter>
+                    </Switch>
+                </BrowserRouter>
+            </CartContextProvider>
         </>
     )
 }

@@ -6,33 +6,24 @@ const Cart = () => {
         <>
             <h3>Bienvenido al carrito</h3>
             <button onClick={() => context.clear()}>Vaciar tu carrito</button>
-            {context.items.lenght === 0 ? (
+            {context.items.length === 0 ? (
                 <>
                     <p>el carrito esta vacio</p>
                     <NavLink to="/">Regresar a productos</NavLink>
                 </>
             ) : (
                 <table>
-                    <thead>
-                        <tr>
-                            <p>ID</p>
-                            <p>Producto:</p>
-                            <p>Cantidad:</p>
-                            <p>Precio unitario:</p>
-                            <p>Precio total:</p>
 
-                        </tr>
-                    </thead>
                     <tbody>
                         {context.items.map(({ item, quantity }) => {
                             return (
                                 <div key={item.id}>
-                                    <p>{item.id}</p>
-                                    <h4>{item.title}</h4>
-                                    <p>{quantity}</p>
-                                    <p>${item.price}</p>
-                                    <p>${quantity * item.price}</p>
-                                    <button onClick={() => context.removeItem(item.id)}>X</button>
+                                    {/* <p>{item.id}</p> */}
+                                    <h4> Titulo Producto: {item.title}</h4>
+                                    <p> Cantidad Seleccionada: {quantity}</p>
+                                    <p> Precio: ${item.price}</p>
+                                    <p> Total: ${quantity * item.price}</p>
+                                    <button onClick={() => context.removeItem(item.id)}>Eliminar de mi carrito</button>
                                 </div>
                             );
                         })}

@@ -26,7 +26,7 @@ const ItemDetail = ({ item }) => {
 
             <section className="productos">
 
-                <div className="contenedor">
+                <div className="contenedor-detail">
 
                     <h3>{title}</h3>
                     <h4>${price}</h4>
@@ -41,8 +41,19 @@ const ItemDetail = ({ item }) => {
                             <NavLink to="/cart" ><Button variant="outline-success" onClick={() => context.addItem(item, count)}>Finalizar la compra</Button></NavLink>
                         </>
                     ) : (
+                        <>
+                            {context.isInCart(item.id) ? (
 
-                        < ItemCounter stock={10} initial={1} onAdd={addItem} className="contador" />
+                                <p className="txt-productoigual">Este producto ya se encuentra en el carrito</p>
+
+                            ) : (
+                                < ItemCounter stock={10} initial={1} onAdd={addItem} className="contador" />
+                            )}
+
+
+
+                        </>
+
                     )}
                 </div>
 

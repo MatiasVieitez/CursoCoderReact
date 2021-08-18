@@ -1,13 +1,13 @@
 import { createContext, useContext, useState } from "react";
 
-const CartContext = createContext([]);
+export const CartContext = createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
 
 const { Provider } = CartContext;
 
 const CartContextProvider = ({ children }) => {
-    
+
     const [items, setItems] = useState([]);
 
     const addItem = (item, quantity) => {
@@ -20,7 +20,7 @@ const CartContextProvider = ({ children }) => {
     const removeItem = itemId => {
         setItems(items.filter(i => i.item.id !== itemId))
     };
-  
+
     const clear = () => {
         setItems([]);
     }
@@ -44,4 +44,4 @@ const CartContextProvider = ({ children }) => {
     );
 };
 
-export { CartContextProvider };
+export default CartContextProvider
