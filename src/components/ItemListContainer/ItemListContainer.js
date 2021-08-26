@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { reject, resolve } from 'q';
 import Itemlist from '../Itemlist/Itemlist';
 import { useParams } from 'react-router-dom';
+import { firestore } from '../firebase';
 
 
 
@@ -13,42 +14,26 @@ const ItemListContainer = (props) => {
 
 
     const [Productos, setProductos] = useState([])
-    const params = useParams();
+    const { id } = useParams()
 
 
     useEffect(() => {
 
-        const promesa = new Promise((resolve, reject) => {
+        let collection = firestore.collection('Productos')
 
-            setTimeout(() => {
+        if (typeof id !== 'undefined') {
+            collection = collection.where('categoria', '==', id)
+        }
 
-                if (params.id) {
+        collection.limit(20)
+            .get()
+            .then(querySnapshot => {
+                setProductos(querySnapshot.docs.map(doc => {
+                    return { id: doc.id, ...doc.data() }
+                }))
+            }).catch(() => setProductos([]))
 
-
-
-
-                    const categoriaBuscada = P.filter(Productos => Productos.categoria === params.id)
-
-
-                    resolve(categoriaBuscada)
-
-
-
-
-
-                } else { resolve(P) }
-
-            }, 2000)
-
-        })
-
-        promesa.then((P) => {
-
-            setProductos(P)
-
-        })
-
-    }, [params.id])
+    }, [id])
 
     return (
         <div className="container">
