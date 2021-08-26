@@ -11,7 +11,7 @@ const ItemDetail = ({ item }) => {
 
     const [count, setCounter] = useState();
 
-    const { title, price, pictureUrl, descripcion } = item;
+    const { title, price, pictureUrl, description, stock } = item;
 
     const context = useCartContext();
 
@@ -30,7 +30,7 @@ const ItemDetail = ({ item }) => {
 
                     <h3>{title}</h3>
                     <h4>${price}</h4>
-                    <p>{descripcion} </p>
+                    <p>{description} </p>
 
 
                     <img src={pictureUrl} alt="" className="logos" />
@@ -47,7 +47,7 @@ const ItemDetail = ({ item }) => {
                                 <p className="txt-productoigual">Este producto ya se encuentra en el carrito</p>
 
                             ) : (
-                                < ItemCounter stock={10} initial={1} onAdd={addItem} className="contador" />
+                                < ItemCounter stock={stock} initial={1} onAdd={addItem} className="contador" />
                             )}
 
 
