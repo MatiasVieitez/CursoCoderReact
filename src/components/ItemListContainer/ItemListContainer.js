@@ -1,6 +1,4 @@
 import '../ItemListContainer/ItemListContainer.css'
-import Item from "../Item/Item"
-import { P } from '../productos';
 import { useEffect, useState } from 'react';
 import { reject, resolve } from 'q';
 import Itemlist from '../Itemlist/Itemlist';

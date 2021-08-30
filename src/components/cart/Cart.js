@@ -1,7 +1,10 @@
 import { useCartContext } from "../../context/CartContext";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import OrderContainer from "../order/OrderContainer";
 const Cart = () => {
     const context = useCartContext();
+    const [cartItems, setCartItems] = useState()
     return (
         <>
             <h3>Bienvenido al carrito</h3>
@@ -15,6 +18,7 @@ const Cart = () => {
                 <table>
 
                     <tbody>
+
                         {context.items.map(({ item, quantity }) => {
                             return (
                                 <div key={item.id}>
@@ -40,6 +44,9 @@ const Cart = () => {
                 </table>
             )
             }
+            <div>
+                <OrderContainer cart={context.items} />
+            </div>
         </>
     );
 };

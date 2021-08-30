@@ -1,6 +1,6 @@
 import "./ItemCounter.css"
 import { useState } from "react";
-import { P } from '../productos';
+
 
 const ItemCounter = ({ stock, initial, onAdd }) => {
 

@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import elefante from "../img/elefante.png"
-import { P } from "../productos"
 import { useParams } from "react-router-dom";
 import { firestore } from "../firebase";
 
