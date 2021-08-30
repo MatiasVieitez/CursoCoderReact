@@ -37,25 +37,25 @@ const Order = ({ OnSubmit, LastOrder, isLoading }) => {
                     <div className="mb-2">
                         <label className="block text-gray-300">Nombre</label>
                         <input type="text" name="name" onChange={inputHandler}
-                            className="border-gray-500 focus:border-white border-2 bg-transparent p-2 w-full" />
+                        />
                     </div>
 
                     <div className="mb-2">
                         <label className="block text-gray-300">Telefono</label>
                         <input type="text" name="phone" onChange={inputHandler}
-                            className="border-gray-500 focus:border-white border-2 bg-transparent p-2 w-full" />
+                        />
                     </div>
 
                     <div className="mb-2">
                         <label className="block text-gray-300">Email</label>
                         <input type="email" name="email" onChange={inputHandler}
-                            className="border-gray-500 focus:border-white border-2 bg-transparent p-2 w-full" />
+                        />
                     </div>
 
                     {LastOrder &&
                         <p className="mt-2 text-center">
                             Confirmamos tu compra con el siguiente Nro de orden:
-                            <code className="block bg-white bg-opacity-20 px-2">
+                            <code >
                                 {LastOrder}
                             </code>
                         </p>}
