@@ -1,6 +1,8 @@
 Buenas mi nombre es Matias Vieitez, este proyecto es realizado para el curso de "React Js" de Coder House.
 Consta de un Eccommerce llamado "CreativaKids" que es un enprendimiento que hay en la familia.
 
+Para el desarrollo de la web app utilizo React JS y bootstrap para algunas estructuras en especifico. luego esta todo realizado con css puro y react.
+
 Dejo en el repositorio un "Gif" mostrando la navegacion por la app.
 
 Para probar la pagina Descarga el pryecto atraves de un navegador o clonalo atraves de github, Luego en una consola de comando escribi "npn install" o "npm i" para instalar los modulos utilizados en el desarrollo de la misma.
