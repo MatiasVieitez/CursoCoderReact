@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { firestore, getTimestamp } from '../firebase'
+import './order.css'
 
-const Order = ({ OnSubmit, LastOrder, isLoading }) => {
+const Order = ({ OnSubmit, isLoading }) => {
 
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
+    const [lastOrder, setLastOrder] = useState()
+    let compro = false;
 
 
     const inputHandler = (e) => {
@@ -25,49 +29,74 @@ const Order = ({ OnSubmit, LastOrder, isLoading }) => {
         }
     }
 
+    const crearOrdenDeCompra = (e) => {
+        if (compro === false) {
+            e.preventDefault()
+            const newOrder = firestore.collection('Orders');
+            const newOrdenDeCompra = {
+                nombre: name,
+                telefono: phone,
+                Email: email,
+                fecha: getTimestamp()
+            }
+            newOrder.add(newOrdenDeCompra).then(({ id }) => {
+                setLastOrder(id)
+            });
+        } else {
+            return (
+                <p className="mt-2 text-center">
+
+                    La compra ya fue realizada
+
+                </p>
+            )
+        }
+    }
+
 
     return (
 
         <div>
 
-            <h2> Finaliza tu compra </h2>
-            <form onSubmit={(e) => OnSubmit(e, { name: name, phone: phone, email: email })}>'
+            <form onSubmit={crearOrdenDeCompra} className="Formulario">
 
-                <div className="mb-6">
-                    <div className="mb-2">
-                        <label className="block text-gray-300">Nombre</label>
-                        <input type="text" name="name" onChange={inputHandler}
+                <h2 className="formTitle"> Finaliza tu compra </h2>
+                <div className="">
+                    <div className="">
+                        <label className="formLabel">Nombre</label>
+                        <input type="text" name="name" className="formInput" required onChange={inputHandler}
                         />
                     </div>
 
-                    <div className="mb-2">
-                        <label className="block text-gray-300">Telefono</label>
-                        <input type="text" name="phone" onChange={inputHandler}
+                    <div className="">
+                        <label className="formLabel">Telefono</label>
+                        <input type="text" name="phone" className="formInput" required onChange={inputHandler}
                         />
                     </div>
 
-                    <div className="mb-2">
-                        <label className="block text-gray-300">Email</label>
-                        <input type="email" name="email" onChange={inputHandler}
+                    <div className="">
+                        <label className="formLabel">Email</label>
+                        <input type="email" name="email" className="formInput" required onChange={inputHandler}
                         />
                     </div>
 
-                    {LastOrder &&
+                    {lastOrder &&
                         <p className="mt-2 text-center">
                             Confirmamos tu compra con el siguiente Nro de orden:
                             <code >
-                                {LastOrder}
+                                {lastOrder}
+                                {compro = true}
                             </code>
                         </p>}
                 </div>
 
                 {!isLoading &&
-                    <button className="bg-green-600 hover:bg-green-500 active:bg-green-700 rounded px-3 py-1"
+                    <button className="formSubmit"
                         type="submit">Finalizar compra</button>
                 }
 
                 {isLoading &&
-                    <button className="bg-yellow-400 active:bg-green-500 rounded px-3 py-1"
+                    <button className="formSubmit"
                         type="button" disabled>
                         <span className="loader"></span>
                     </button>

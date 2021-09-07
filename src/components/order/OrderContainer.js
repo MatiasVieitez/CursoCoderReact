@@ -3,8 +3,10 @@ import { firestore, getTimestamp } from '../firebase'
 import Order from './Order'
 
 const OrderContainer = ({ cart }) => {
-    const [LastOrder, setLastOrder] = useState()
+    const [lastOrder, setLastOrder] = useState()
     const [isLoading, setIsLoading] = useState(false)
+
+
 
     const onSubmit = (e, buyer) => {
         e.preventDefault()
@@ -17,7 +19,7 @@ const OrderContainer = ({ cart }) => {
             total: cart.map((item) => item.price).reduce((prev, curr) => prev + curr)
         }
 
-        firestore().collection('Orders').add(newOrder).then(({ id }) => {
+        firestore.collection('Orders').add(newOrder).then(({ id }) => {
             setLastOrder(id)
         }).finally(() => {
             setIsLoading(false)
@@ -25,7 +27,7 @@ const OrderContainer = ({ cart }) => {
     }
 
     return (
-        <Order onSubmit={onSubmit} LastOrder={LastOrder} isLoading={isLoading} />
+        <Order onSubmit={onSubmit} lastOrder={lastOrder} isLoading={isLoading} />
     )
 }
 

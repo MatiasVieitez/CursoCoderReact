@@ -1,10 +1,12 @@
 import { useCartContext } from "../../context/CartContext";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
 import OrderContainer from "../order/OrderContainer";
+import './cart.css'
+
 const Cart = () => {
     const context = useCartContext();
-    const [cartItems, setCartItems] = useState()
+
+
     return (
         <>
             <h3>Bienvenido al carrito</h3>
@@ -15,34 +17,45 @@ const Cart = () => {
                     <NavLink to="/">Regresar a productos</NavLink>
                 </>
             ) : (
-                <table>
+                <div className="items-carrito">
 
-                    <tbody>
 
-                        {context.items.map(({ item, quantity }) => {
-                            return (
-                                <div key={item.id}>
-                                    {/* <p>{item.id}</p> */}
-                                    <h4> Titulo Producto: {item.title}</h4>
-                                    <p> Cantidad Seleccionada: {quantity}</p>
-                                    <p> Precio: ${item.price}</p>
-                                    <p> Total: ${quantity * item.price}</p>
-                                    <button onClick={() => context.removeItem(item.id)}>Eliminar de mi carrito</button>
-                                </div>
-                            );
-                        })}
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th colSpan={4}>Total</th>
-                            <th>${context.items.reduce((total, { item: { price }, quantity }) => {
-                                return total + price * quantity;
-                            }, 0)}</th>
-                            <th />
-                        </tr>
-                    </tfoot>
-                </table>
+
+                    {context.items.map(({ item, quantity }) => {
+                        return (
+                            <div key={item.id} className="producto-carrito">
+
+                                <h5> Titulo Producto: {item.title}</h5>
+                                <img src={item.pictureUrl} className="img-carrito" />
+                                <p> Cantidad Seleccionada: {quantity}</p>
+                                <p> Precio: ${item.price}</p>
+                                <p className=""> Total: ${quantity * item.price}</p>
+
+                                <button onClick={() => context.removeItem(item.id)} className="btn-eliminar-elemento">Eliminar de mi carrito</button>
+                            </div>
+                        );
+                    })}
+
+
+
+
+
+                    <h4 colSpan={4} className="total">Total carrito:
+                        ${context.items.reduce((total, { item: { price }, quantity }) => {
+                            return total + price * quantity;
+                        }, 0)}</h4>
+
+
+
+
+                </div>
+
+
+
+
+
             )
+
             }
             <div>
                 <OrderContainer cart={context.items} />
