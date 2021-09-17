@@ -1,19 +1,14 @@
 import '../ItemListContainer/ItemListContainer.css'
 import { useEffect, useState } from 'react';
-import { reject, resolve } from 'q';
 import Itemlist from '../Itemlist/Itemlist';
 import { useParams } from 'react-router-dom';
 import { firestore } from '../firebase';
-
-
-
 
 const ItemListContainer = (props) => {
 
 
     const [Productos, setProductos] = useState([])
     const { id } = useParams()
-
 
     useEffect(() => {
 

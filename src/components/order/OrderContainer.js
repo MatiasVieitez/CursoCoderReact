@@ -6,8 +6,6 @@ const OrderContainer = ({ cart }) => {
     const [lastOrder, setLastOrder] = useState()
     const [isLoading, setIsLoading] = useState(false)
 
-
-
     const onSubmit = (e, buyer) => {
         e.preventDefault()
         setIsLoading(true)

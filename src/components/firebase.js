@@ -1,7 +1,6 @@
 import firebase from 'firebase/app';
 import "firebase/firestore";
 
-
 const firebaseConfig = {
     apiKey: "AIzaSyDqwN6SxtQQPZ8kw8dplsjNYC9yo_Fs7vQ",
     authDomain: "creativakids-9e20e.firebaseapp.com",

@@ -35,7 +35,6 @@ const App = () => {
                             <Cart />
                         </Route>
 
-
                     </Switch>
                 </BrowserRouter>
             </CartContextProvider>

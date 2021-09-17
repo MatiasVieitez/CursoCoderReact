@@ -1,17 +1,7 @@
-import ItemCounter from "../Counter/ItemCounter.js";
 import './Item.css'
 import { NavLink } from "react-router-dom";
 
-//id: 1, title: 'Monito', price: 670, pictureUrl: Mono, stock: 20
-
 const Item = ({ id, title, price, pictureUrl, stock }) => {
-
-    function onAdd(counter) {
-
-
-
-    }
-
 
     return (
 
@@ -31,8 +21,6 @@ const Item = ({ id, title, price, pictureUrl, stock }) => {
         </>
 
     );
-
-
 
 };
 

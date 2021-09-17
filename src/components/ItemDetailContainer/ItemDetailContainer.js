@@ -7,8 +7,6 @@ import { firestore } from "../firebase";
 
 const ItemDetailContainer = () => {
 
-  //const prod = { id: 4, title: "Elefante", price: 500, PictureUrl: elefante }
-
   const [item, setItem] = useState({})
 
   const { id } = useParams();

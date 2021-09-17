@@ -6,7 +6,6 @@ import './cart.css'
 const Cart = () => {
     const context = useCartContext();
 
-
     return (
         <>
             <h3>Bienvenido al carrito</h3>
@@ -19,14 +18,12 @@ const Cart = () => {
             ) : (
                 <div className="items-carrito">
 
-
-
                     {context.items.map(({ item, quantity }) => {
                         return (
                             <div key={item.id} className="producto-carrito">
 
                                 <h5> Titulo Producto: {item.title}</h5>
-                                <img src={item.pictureUrl} className="img-carrito" />
+                                <img src={item.pictureUrl} className="img-carrito" alt="Imagen del Producto" />
                                 <p> Cantidad Seleccionada: {quantity}</p>
                                 <p> Precio: ${item.price}</p>
                                 <p className=""> Total: ${quantity * item.price}</p>
@@ -36,24 +33,12 @@ const Cart = () => {
                         );
                     })}
 
-
-
-
-
                     <h4 colSpan={4} className="total">Total carrito:
                         ${context.items.reduce((total, { item: { price }, quantity }) => {
                             return total + price * quantity;
                         }, 0)}</h4>
 
-
-
-
                 </div>
-
-
-
-
-
             )
 
             }

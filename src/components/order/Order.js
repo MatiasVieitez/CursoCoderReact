@@ -10,7 +10,6 @@ const Order = ({ OnSubmit, isLoading }) => {
     const [lastOrder, setLastOrder] = useState()
     let compro = false;
 
-
     const inputHandler = (e) => {
 
         switch (e.target.name) {
@@ -52,7 +51,6 @@ const Order = ({ OnSubmit, isLoading }) => {
             )
         }
     }
-
 
     return (
 
@@ -104,9 +102,7 @@ const Order = ({ OnSubmit, isLoading }) => {
 
             </form>
 
-
         </div>
-
     )
 }
 

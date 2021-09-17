@@ -11,10 +11,6 @@ const Itemlist = ({ Productos }) => {
 
                 return <Item key={Productos.id} {...Productos} />
             })}
-
-
-
-
         </ul>
     )
 }

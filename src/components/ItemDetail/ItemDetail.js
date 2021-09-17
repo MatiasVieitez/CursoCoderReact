@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "./itemdetail.css"
 import { useCartContext } from "../../context/CartContext.js";
-import { useEffect } from "react";
+
 
 
 const ItemDetail = ({ item }) => {
